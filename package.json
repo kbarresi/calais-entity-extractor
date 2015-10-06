@@ -1,0 +1,35 @@
+{
+  "name": "calais-entity-extractor",
+  "version": "1.0.0",
+  "description": "Extract entities from text using Open Calais.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbarresi/calais-entity-extractor.git"
+  },
+  "main": "./lib/calais-entity-extractor.js",
+  "directories": {
+    "lib": "./lib"
+  },
+
+  "keywords": [
+    "calais",
+    "text-analysis"
+  ],
+  "author": "Kevin Barresi <kbarresi@stevens.edu>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kbarresi/calais-entity-extractor/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/kbarresi/calais-entity-extractor/issues"
+  },
+  "homepage": "https://github.com/kbarresi/calais-entity-extractor#readme",
+  "dependencies" : {
+    "request": "latest"
+  }
+}
