@@ -1,7 +1,7 @@
 calais-entity-extractor
 =======================
 
-An npm package that provides an easy way to extract entities from blocks of text using Open Calais. A valid Calais key is required. You can get a free one at the [Open Calais site](http://new.opencalais.com).
+An npm package that provides an easy way to extract entities from blocks of text using Open Calais. A valid Calais key is required. You can get a free one at the [Open Calais site](http://new.opencalais.com). This module was inspired by [node-calais](https://github.com/mcantelon/node-calais), but that project doesn't (as of 10/6/2015) support the Calais API changes.
 
 We perform *named entity recognition* and output clean *entity markup tags*  and *socialTags* in JSON.
 
