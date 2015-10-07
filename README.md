@@ -20,7 +20,7 @@ We perform *named entity recognition* and output clean *entity markup tags*  and
     calais.set('content', 'The awesome text to analyze. News stories work great.');
 
 
-    calais.extract(function(result, err) {     //perform the request
+    calais.extractFromText(function(result, err) {     //perform the request
         if (err) {
             console.log('Uh oh, we got an error! : ' + err);
             return;
@@ -84,6 +84,17 @@ Valid options and their default values are:
     minConfidence           : 0.75                 // Anything that has less than this confidence level is ignored
 
 
+
+We also support analyzing text directly from webpages. Set up the `calais` objects just like in 
+the previous example, and perform a query like this:
+
+    calais.extractFromUrl(url, function(result, err) {
+        ...
+     });
+     
+The results are returned in the same way as the extractFromText method.
+
+For working examples, see *example.js*
 
 ## Tests
 
