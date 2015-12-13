@@ -1,6 +1,6 @@
 {
   "name": "calais-entity-extractor",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Extract entities from text using Open Calais.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

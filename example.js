@@ -24,12 +24,13 @@ calais.lookup("1-4295861160", function(result, err) {
 
 
 // Example entity searching
+/*
 calais.search("IBM", function(result, err) {
     if (err)
         return console.log("Error: " + err);
     console.log("Result: " + util.inspect(result, false, null));
 });
-
+*/
 
 /*
     //Example text entity tagging functionality.
