@@ -5,7 +5,7 @@ var text = "The gravity of Volkswagen's emissions scandal is sinking in as the a
 var Calais = require('./lib/calais-entity-extractor.js').Calais;
 
 //You can enter options as the second parameter.
-var calais = new Calais('API KEY HERE');
+var calais = new Calais('ENTER API KEY HERE');
 
 // You can set options after the constructor using .set(option, value). The example below sets
 // the text that we want to analyze.
@@ -13,6 +13,26 @@ calais.set('content', text);
 
 
 var util = require('util'); //for printing the results.
+
+// Example entity lookup
+calais.lookup("1-4295861160", function(result, err) {
+    if (err)
+        return console.log("Error: " + err);
+
+    console.log("Result: " + util.inspect(result, false, null));
+});
+
+
+// Example entity searching
+calais.search("IBM", function(result, err) {
+    if (err)
+        return console.log("Error: " + err);
+    console.log("Result: " + util.inspect(result, false, null));
+});
+
+
+/*
+    //Example text entity tagging functionality.
 
 calais.extractFromText(function(result, err) {     //perform the request
     if (err) {
@@ -48,3 +68,4 @@ calais.extractFromText(function(result, err) {     //perform the request
         console.log('\nTags: ' + util.inspect(result.tags, false, null));
     });
 });
+*/
