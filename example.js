@@ -5,7 +5,7 @@ var text = "The gravity of Volkswagen's emissions scandal is sinking in as the a
 var Calais = require('./lib/calais-entity-extractor.js').Calais;
 
 //You can enter options as the second parameter.
-var calais = new Calais('ENTER API KEY HERE');
+var calais = new Calais('API KEY HERE');
 
 // You can set options after the constructor using .set(option, value). The example below sets
 // the text that we want to analyze.
@@ -14,13 +14,15 @@ calais.set('content', text);
 
 var util = require('util'); //for printing the results.
 
-// Example entity lookup
+/*
+ // Example entity lookup
+
 calais.lookup("1-4295861160", function(result, err) {
     if (err)
         return console.log("Error: " + err);
-
     console.log("Result: " + util.inspect(result, false, null));
 });
+*/
 
 
 // Example entity searching
@@ -32,9 +34,10 @@ calais.search("IBM", function(result, err) {
 });
 */
 
-/*
+
     //Example text entity tagging functionality.
 
+/*
 calais.extractFromText(function(result, err) {     //perform the request
     if (err) {
         console.log('Uh oh, we got an error! : ' + err);
@@ -49,24 +52,23 @@ calais.extractFromText(function(result, err) {     //perform the request
 
     //'tags' are a list of string tags (the "socialTags" from Calais).
     console.log('\nTags: ' + util.inspect(result.tags, false, null));
-
-
-    //Now lets try analyzing a webpage. We supply a URL.
-    calais.extractFromUrl('http://www.reuters.com/article/2015/10/07/us-iran-us-talks-idUSKCN0S10P220151007', function(result, err) {
-        if (err) {
-            console.log('Uh oh, we got an error! : ' + err);
-            return;
-        }
-
-
-
-        //The results have the same format as the extractFromText function.
-
-        //'entities' contains a list of the detected entities, and gives basic info & confidence
-        console.log('Entities: ' + util.inspect(result.entities, false, null));
-
-        //'tags' are a list of string tags (the "socialTags" from Calais).
-        console.log('\nTags: ' + util.inspect(result.tags, false, null));
-    });
 });
 */
+
+
+//Now lets try analyzing a webpage. We supply a URL.
+calais.extractFromUrl('https://www.washingtonpost.com/politics/its-cruz-not-trump-who-looks-more-like-the-favorite-to-win-gop-primary/2015/12/13/bf8c57de-a1a9-11e5-b53d-972e2751f433_story.html', function(result, err) {
+    if (err) {
+        console.log('Uh oh, we got an error! : ' + err);
+        return;
+    }
+
+
+
+    //The results have the same format as the extractFromText function.
+    //'entities' contains a list of the detected entities, and gives basic info & confidence
+    console.log('Entities: ' + util.inspect(result.entities, false, null));
+
+    //'tags' are a list of string tags (the "socialTags" from Calais).
+    console.log('\nTags: ' + util.inspect(result.tags, false, null));
+});
